@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monkádo</title>
+  <meta name="description" content="Monkádo: innovación en delivery, rapidez y confianza en cada compra.">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --verde: #7A9B76;
+      --verde-hover: #5d7b59;
+      --rosado: #FAE1DF;
+      --rosado-borde: #f0caca;
+      --gris-fondo: #f5f5f5;
+      --gris-claro: #f9f9f9;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--rosado);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--rosado-borde);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    header.hidden {
+      transform: translateY(-100%);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--verde);
+    }
+
+    header .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--verde);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--verde-hover);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: url("img/almacen.png") no-repeat center center/cover; 
+      position: relative;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      color: var(--verde);
+    }
+
+    .card {
+      background-color: var(--gris-claro);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* ===== VALORES ===== */
+    .valores-section {
+      position: relative;
+      padding: 0;
+      margin-top: 50px;
+      border-radius: 12px;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* 🔥 Franja rosada degradada para el título */
+    .valores-titulo {
+      background: linear-gradient(to right, #ffccd5, #ffe6eb);
+      padding: 40px 20px;
+      margin: 0 auto 50px auto;
+      text-align: center;
+      width: 100%;
+    }
+
+    .valores-titulo h2 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .cuadros-valores {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+      flex-wrap: nowrap; /* Mantiene en una sola fila */
+    }
+
+    .valor {
+      flex: 1;
+      background-color: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .valor:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Laterales → borde verde */
+    .valor:nth-child(1),
+    .valor:nth-child(3) {
+      border: 2px solid var(--verde);
+      background-color: #fff;
+    }
+
+    /* Medio → fondo rosado */
+    .valor:nth-child(2) {
+      background-color: var(--rosado);
+      border: 2px solid var(--rosado-borde);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--rosado);
+      padding: 20px 40px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-container p {
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      margin: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .social-icons a {
+      color: var(--verde);
+      font-size: 28px;
+      text-decoration: none;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: var(--verde-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="main-header">
+    <div class="logo">
+      <img src="img/monkado_logo_1.png" alt="Logo Monkádo" loading="lazy">
+      Monkádo
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="TIenda.html">Tienda</a>
+      <a href="contactanos.html">Contáctanos</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Monkádo, innovación y mercado a la orden de tu mano.</h1>
+  </section>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main>
+    <div class="card">
+      <section>
+        <h2>Acerca de nosotros</h2>
+        <h1>¿Quiénes somos?</h1>
+        <p>En Monkádo revolucionamos el delivery para adaptarlo al ritmo actual de la vida. 
+        Somos una empresa que busca simplificar y modernizar la manera en que las personas realizan sus compras, 
+        ofreciendo rapidez, confianza y un servicio cercano que conecta directamente al cliente con lo que necesita, 
+        justo en el momento que lo necesita.</p>
+
+        <h1>Misión</h1>
+        <p>Nuestra misión en Monkádo es ser pioneros en el sector del delivery y la distribución, ofreciendo 
+          un servicio personalizado y eficiente, garantizando la protección y seguridad de los productos 
+          en el 100% de las entregas y manteniendo un índice de satisfacción del cliente superior al 
+          90%. Apostamos por la tecnología como herramienta clave para reducir costos logísticos en un 
+          15% anual, transformar la experiencia de compra y hacerla más práctica, confiable y cercana 
+          para cada usuario.</p>
+
+        <h2>Visión</h2>
+        <p>En Monkádo visualizamos consolidarnos como una de las tres empresas líderes de delivery en Colombia
+           para 2030, destacándonos por nuestra capacidad de innovación y eficiencia, con una cobertura 
+           nacional en más del 80% de las principales ciudades. Queremos ser reconocidos como un referente 
+           en soluciones logísticas modernas, logrando que al menos el 95% de nuestros usuarios valoren 
+           positivamente la experiencia de compra por su simplicidad, agilidad y confianza.</p>
+      </section>
+    </div>
+
+    <!-- ===== NUESTROS VALORES ===== -->
+    <section class="valores-section">
+      <div class="valores-titulo">
+        <h2>Nuestros Valores</h2>
+      </div>
+      <div class="cuadros-valores">
+        <article class="valor">
+          <h3>Compromiso</h3>
+          <p>Nos esforzamos por cumplir con cada pedido de forma puntual, segura y responsable, 
+          generando confianza en nuestros clientes.</p>
+        </article>
+        <article class="valor">
+          <h3>Innovación</h3>
+          <p>Estamos en constante evolución, buscando nuevas ideas y tecnologías que mejoren 
+          la experiencia de compra y entrega.</p>
+        </article>
+        <article class="valor">
+          <h3>Calidad</h3>
+          <p>Garantizamos un servicio confiable y cercano, cuidando cada detalle 
+          para superar las expectativas de quienes confían en nosotros.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Monkádo - Todos los derechos reservados</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/monkado_25?igsh=ZDIwMmVmeWNmaXFn" target="_blank" aria-label="Instagram Monkádo"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@monkado" target="_blank" aria-label="TikTok Monkádo"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT SCROLL HEADER ===== -->
+  <script>
+    let lastScrollTop = 0;
+    const header = document.getElementById("main-header");
+
+    window.addEventListener("scroll", function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        header.classList.add("hidden");
+      } else {
+        header.classList.remove("hidden");
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Monkádo</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #FAE1DF;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #7A9B76;
+    }
+
+    header .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #7A9B76;
+      font-weight: bold;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                  url("img/fondo.jpg") center/cover no-repeat;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      color: #7A9B76;
+    }
+
+    .hero a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #7A9B76;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .hero a:hover {
+      background-color: #5d7b59;
+    }
+
+    /* ===== CONTENEDOR PRINCIPAL ===== */
+    .container {
+      display: flex;
+      padding: 40px;
+      gap: 30px;
+    }
+
+    /* ===== FILTROS ===== */
+    .filters {
+      width: 220px;
+      border: 2px solid #FAE1DF;
+      border-radius: 10px;
+      padding: 20px;
+      background: #fff;
+      height: fit-content;
+    }
+
+    .filters h3 {
+      margin-top: 0;
+      color: #7A9B76;
+    }
+
+    .filters label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    /* ===== PRODUCTOS ===== */
+    .products {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 productos por fila */
+      gap: 20px;
+    }
+
+    .product {
+      border: 2px solid #FAE1DF;
+      border-radius: 12px;
+      background: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h4 {
+      margin: 10px 0 5px;
+      color: #7A9B76;
+    }
+
+    .product p {
+      margin: 5px 0;
+      font-weight: bold;
+    }
+
+    .product button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #7A9B76;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .product button:hover {
+      background-color: #5d7b59;
+    }
+
+    /* ===== CARRITO ===== */
+    .cart {
+      position: fixed;
+      right: 20px;
+      top: 100px;
+      width: 280px;
+      background: #fff;
+      border: 2px solid #FAE1DF;
+      border-radius: 12px;
+      padding: 15px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .cart h3 {
+      margin-top: 0;
+      color: #7A9B76;
+      text-align: center;
+    }
+
+    .cart ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cart ul li {
+      font-size: 14px;
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cart p {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #FAE1DF;
+      padding: 20px 40px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #7A9B76;
+      font-size: 28px;
+      text-decoration: none;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #5d7b59;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="img/monkado_logo_1.png" alt="Logo Monkádo">
+      Monkádo
+    </div>
+    <nav>
+      <a href="index.html">Acerca de nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="TIenda.html">Tienda</a>
+      <a href="contactanos.html">Contáctanos</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Monkádo, innovación y mercado a la orden de tu mano.</h1>
+  </section>
+
+  <!-- ===== CONTENEDOR PRINCIPAL ===== -->
+  <div class="container">
+    <!-- FILTROS -->
+    <aside class="filters">
+      <h3>Filtros</h3>
+      <label><input type="checkbox" value="frutas"> Frutas</label>
+      <label><input type="checkbox" value="verduras"> Verduras</label>
+      <label><input type="checkbox" value="enlatados"> Enlatados</label>
+      <label><input type="checkbox" value="granos"> Granos</label>
+    </aside>
+
+    <!-- PRODUCTOS -->
+    <section class="products" id="productos">
+      <div class="product" data-category="frutas">
+        <img src="img/manzana.jpg" alt="Manzana">
+        <h4>Manzana</h4>
+        <p>$7.000</p>
+        <button onclick="addToCart('Manzana', 7000)">Agregar al carrito</button>
+      </div>
+
+      <div class="product" data-category="frutas">
+        <img src="img/fresa.jpg" alt="Fresa">
+        <h4>Fresa (Libra)</h4>
+        <p>$5.000</p>
+        <button onclick="addToCart('Fresa', 5000)">Agregar al carrito</button>
+      </div>
+      
+      <div class="product" data-category="verduras">
+        <img src="img/zanahoria.jpg" alt="Zanahoria">
+        <h4>Zanahoria</h4>
+        <p>$3.000</p>
+        <button onclick="addToCart('Zanahoria', 3000)">Agregar al carrito</button>
+      </div>
+
+      <div class="product" data-category="verduras">
+        <img src="img/cebollacabezona.jpg" alt="Cebolla Larga">
+        <h4>Cebolla Larga (Libra)</h4>
+        <p>$2.500</p>
+        <button onclick="addToCart('Cebolla Larga', 2500)">Agregar al carrito</button>
+      </div>
+
+      <div class="product" data-category="enlatados">
+        <img src="img/maízdulce.jpg" alt="Maíz Dulce">
+        <h4>Maíz Dulce</h4>
+        <p>$6.800</p>
+        <button onclick="addToCart('Maíz Dulce', 6800)">Agregar al carrito</button>
+      </div>
+
+      <div class="product" data-category="granos">
+        <img src="img/lentejas.jpg" alt="Lentejas">
+        <h4>Lentejas (Libra)</h4>
+        <p>$5.800</p>
+        <button onclick="addToCart('Lentejas', 5800)">Agregar al carrito</button>
+      </div>
+
+      <div class="product" data-category="granos">
+        <img src="img/frijoles.jpg" alt="Frijoles">
+        <h4>Frijoles (Libra)</h4>
+        <p>$10.000</p>
+        <button onclick="addToCart('Frijoles', 10000)">Agregar al carrito</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== CARRITO ===== -->
+  <div class="cart" id="cart">
+    <h3>🛒 Carrito</h3>
+    <ul id="cart-items"></ul>
+    <p id="total">Total: $0</p>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/monkado_25" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@monkado" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>&copy; 2025 Monkádo - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // FILTROS
+    const checkboxes = document.querySelectorAll('.filters input[type="checkbox"]');
+    const products = document.querySelectorAll('.product');
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const activeFilters = Array.from(checkboxes)
+          .filter(c => c.checked)
+          .map(c => c.value);
+
+        products.forEach(product => {
+          const category = product.getAttribute('data-category');
+          if (activeFilters.length === 0 || activeFilters.includes(category)) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // CARRITO
+    let cart = [];
+    function addToCart(name, price) {
+      cart.push({name, price});
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById("cart-items");
+      const total = document.getElementById("total");
+      cartItems.innerHTML = "";
+      let sum = 0;
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price}`;
+        cartItems.appendChild(li);
+        sum += item.price;
+      });
+      total.textContent = "Total: $" + sum;
+    }
+  </script>
+</body>
+</html>
+

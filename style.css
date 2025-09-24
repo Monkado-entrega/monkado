@@ -1,0 +1,155 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e8e3df;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: #dbadbf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-principal {
+  height: 50px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'Great Vibes', cursive;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.activo {
+  color: #64915f;
+}
+
+/* Contacto */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.contact-card {
+  display: flex;
+  max-width: 900px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contact-img img {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-form {
+  flex: 1;
+  padding: 30px;
+}
+
+.contact-form h1 {
+  margin-bottom: 20px;
+  color: #64915f;
+  font-family: 'Great Vibes', cursive;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: #64915f;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #4b7048;
+}
+
+/* Footer */
+footer {
+  background-color: #dbadbf;
+  color: #333;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #64915f;
+}
+
+
+

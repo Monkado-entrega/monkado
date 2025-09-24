@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monkádo - Servicios</title>
+
+  <!-- Fuente e iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* ===== HEADER (BANNER) ===== */
+    header {
+      background-color: #FAE1DF;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f0caca;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo img {
+      height: 35px;
+    }
+
+    .logo h1 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #7A9B76;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #7A9B76;
+      font-weight: bold;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+
+    nav ul li a:hover {
+      color: #5d7b59;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: url("img/servicios.png") no-repeat center center/cover; 
+      position: relative;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== SECCIONES ===== */
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #7A9B76;
+      margin-bottom: 40px;
+    }
+
+    /* ===== RECUADROS INTERCALADOS ===== */
+    .service-box {
+      display: flex;
+      align-items: center;
+      margin: 30px 0;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff;
+      border: 2px solid transparent;
+    }
+
+    .service-box:nth-child(odd) {
+      border-color: #FAE1DF; /* Rosa */
+    }
+
+    .service-box:nth-child(odd) h3 {
+      color: #7A9B76; /* Verde */
+    }
+
+    .service-box:nth-child(even) {
+      border-color: #7A9B76; /* Verde */
+      background: #fdf7f5; /* Beige clarito */
+    }
+
+    .service-box:nth-child(even) h3 {
+      background-color: #fff;
+      color: #fff; /* Rosa */
+    }
+
+    .service-box:nth-child(even) p {
+      color: #444;
+    }
+
+    .service-box:nth-child(even) img {
+      border: 2px solid #FAE1DF;
+    }
+
+    .service-box img {
+      width: 180px;
+      height: 120px;
+      background: #ddd;
+      border-radius: 8px;
+      margin: 0 20px;
+      object-fit: cover;
+    }
+
+    .service-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #FAE1DF;
+      padding: 20px 40px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #7A9B76;
+      font-size: 28px;
+      text-decoration: none;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #5d7b59;
+    }
+
+    .footer-container p {
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="logo">
+      <img src="img/monkado_logo_1.png" alt="Logo Monkádo">
+      <h1>Monkádo</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="TIenda.html">Tienda</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Nuestros Servicios</h1>
+  </section>
+
+  <!-- ===== SERVICIOS EMPRESAS ===== -->
+  <section id="servicios" class="section">
+    <h2>Servicios para Empresas</h2>
+
+    <div class="service-box">
+      <img src="img/distribución.jpg" alt="Distribución empresarial">
+      <div class="service-text">
+        <h3>Distribución eficiente</h3>
+        <p>Nos encargamos de llevar tus productos a tus clientes con rapidez y seguridad, garantizando que tus entregas lleguen a tiempo y en perfecto estado.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <img src="img/almacenamiento.jpg" alt="Gestión logística">
+      <div class="service-text">
+        <h3>Gestión logística</h3>
+        <p>Diseñamos soluciones personalizadas de logística para tu negocio, optimizando tiempos y costos en cada etapa de la cadena de distribución.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <img src="img/pedidos.jpg" alt="Plataforma de pedidos">
+      <div class="service-text">
+        <h3>Plataforma de pedidos</h3>
+        <p>Brindamos acceso a herramientas digitales que permiten gestionar, rastrear y organizar pedidos de forma fácil y en tiempo real.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <img src="img/alianzas.jpg" alt="Alianzas estratégicas">
+      <div class="service-text">
+        <h3>Alianzas estratégicas</h3>
+        <p>Impulsamos tu empresa creando conexiones con nuevos clientes y mercados a través de nuestra red de distribución confiable y moderna.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS USUARIOS ===== -->
+  <section class="section">
+    <h2>Servicios para Consumidores</h2>
+
+    <div class="service-box">
+      <img src="img/distribución.jpg" alt="Compras rápidas">
+      <div class="service-text">
+        <h3>Compras rápidas</h3>
+        <p>Haz tus compras sin complicaciones y recibe tus productos en la puerta de tu casa de manera fácil, segura y confiable.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <img src="img/mercado.jpg" alt="Delivery de mercado">
+      <div class="service-text">
+        <h3>Delivery de mercado</h3>
+        <p>Olvídate de las filas y el tiempo perdido: Monkádo lleva tu mercado hasta tu hogar, fresco y listo para ti.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <img src="img/rastreo.jpg" alt="Rastreo de pedidos">
+      <div class="service-text">
+        <h3>Rastreo en tiempo real</h3>
+        <p>Con nuestra app podrás seguir tu pedido en todo momento, sabiendo exactamente cuándo llegará a tus manos.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <img src="img/soporte.jpg" alt="Atención personalizada">
+      <div class="service-text">
+        <h3>Atención personalizada</h3>
+        <p>Estamos disponibles para resolver tus dudas y ayudarte en cada paso de tu experiencia con Monkádo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/monkado_25?igsh=ZDIwMmVmeWNmaXFn" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@monkado" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>&copy; 2025 Monkádo - Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>
