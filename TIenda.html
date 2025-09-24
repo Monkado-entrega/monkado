@@ -222,6 +222,48 @@
       transform: scale(1.2);
       color: #5d7b59;
     }
+    @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0 0 0;
+  }
+
+  .hero {
+    padding: 80px 15px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .filters {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .products {
+    grid-template-columns: 1fr; /* 1 producto por fila en móvil */
+    gap: 15px;
+  }
+
+  .cart {
+    position: static;
+    width: 100%;
+    max-height: none;
+    margin-top: 20px;
+  }
+}
   </style>
 </head>
 <body>
@@ -376,6 +418,7 @@
   </script>
 </body>
 </html>
+
 
 
 
