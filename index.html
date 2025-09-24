@@ -51,7 +51,7 @@
     }
 
     header .logo img {
-      height: 40px;
+      height: 50px;
       margin-right: 10px;
     }
 
@@ -119,7 +119,6 @@
       color: #fff;
     }
 
-    /* 🔥 Franja rosada degradada para el título */
     .valores-titulo {
       background: linear-gradient(to right, #ffccd5, #ffe6eb);
       padding: 40px 20px;
@@ -141,7 +140,7 @@
       gap: 20px;
       position: relative;
       z-index: 1;
-      flex-wrap: nowrap; /* Mantiene en una sola fila */
+      flex-wrap: nowrap;
     }
 
     .valor {
@@ -159,14 +158,12 @@
       transform: translateY(-5px);
     }
 
-    /* Laterales → borde verde */
     .valor:nth-child(1),
     .valor:nth-child(3) {
       border: 2px solid var(--verde);
       background-color: #fff;
     }
 
-    /* Medio → fondo rosado */
     .valor:nth-child(2) {
       background-color: var(--rosado);
       border: 2px solid var(--rosado-borde);
@@ -211,10 +208,69 @@
       transform: scale(1.2);
       color: var(--verde-hover);
     }
+
+    /* ===== 📱 RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 80px 15px 40px;
+      }
+
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .cuadros-valores {
+        flex-direction: column;
+      }
+
+      .valor {
+        margin-bottom: 15px;
+      }
+
+      .valores-titulo h2 {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
-
   <!-- ===== HEADER ===== -->
   <header id="main-header">
     <div class="logo">
@@ -318,3 +374,5 @@
 
 </body>
 </html>
+
+
