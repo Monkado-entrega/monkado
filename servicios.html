@@ -187,6 +187,51 @@
       color: #333;
       margin: 0;
     }
+    /* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 80px 15px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .service-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-box img {
+    margin: 0 0 15px 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .service-text {
+    text-align: center;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+}
   </style>
 </head>
 <body>
@@ -297,6 +342,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
