@@ -33,7 +33,7 @@
     }
 
     header .logo img {
-      height: 40px;
+      height: 50px;
       margin-right: 10px;
     }
 
@@ -45,33 +45,28 @@
     }
 
     /* ===== HERO ===== */
-    .hero {
+     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-                  url("img/fondo.jpg") center/cover no-repeat;
+      padding: 120px 20px 60px;
+      background: url("img/servicios.png") no-repeat center center/cover; 
+      position: relative;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
     }
 
     .hero h1 {
       font-size: 2.5em;
-      color: #7A9B76;
-    }
-
-    .hero a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #7A9B76;
       color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+      position: relative;
+      z-index: 2;
     }
-
-    .hero a:hover {
-      background-color: #5d7b59;
-    }
-
     /* ===== CONTENEDOR PRINCIPAL ===== */
     .container {
       display: flex;
@@ -179,6 +174,15 @@
       margin: 5px 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart ul li button {
+      background: transparent;
+      border: none;
+      color: red;
+      font-size: 16px;
+      cursor: pointer;
     }
 
     .cart p {
@@ -228,7 +232,7 @@
       Monkádo
     </div>
     <nav>
-      <a href="index.html">Acerca de nosotros</a>
+      <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="TIenda.html">Tienda</a>
       <a href="contactanos.html">Contáctanos</a>
@@ -255,51 +259,51 @@
     <section class="products" id="productos">
       <div class="product" data-category="frutas">
         <img src="img/manzana.jpg" alt="Manzana">
-        <h4>Manzana</h4>
+        <h4>Manzana (Libra)</h4>
         <p>$7.000</p>
-        <button onclick="addToCart('Manzana', 7000)">Agregar al carrito</button>
+        <button onclick="addToCart('Manzana (Libra)', 7000)">Agregar al carrito</button>
       </div>
 
       <div class="product" data-category="frutas">
         <img src="img/fresa.jpg" alt="Fresa">
         <h4>Fresa (Libra)</h4>
         <p>$5.000</p>
-        <button onclick="addToCart('Fresa', 5000)">Agregar al carrito</button>
+        <button onclick="addToCart('Fresa (Libra)', 5000)">Agregar al carrito</button>
       </div>
       
       <div class="product" data-category="verduras">
         <img src="img/zanahoria.jpg" alt="Zanahoria">
-        <h4>Zanahoria</h4>
+        <h4>Zanahoria (Libra)</h4>
         <p>$3.000</p>
-        <button onclick="addToCart('Zanahoria', 3000)">Agregar al carrito</button>
+        <button onclick="addToCart('Zanahoria (Libra)', 3000)">Agregar al carrito</button>
       </div>
 
       <div class="product" data-category="verduras">
         <img src="img/cebollacabezona.jpg" alt="Cebolla Larga">
         <h4>Cebolla Larga (Libra)</h4>
         <p>$2.500</p>
-        <button onclick="addToCart('Cebolla Larga', 2500)">Agregar al carrito</button>
+        <button onclick="addToCart('Cebolla Larga (libra)', 2500)">Agregar al carrito</button>
       </div>
 
       <div class="product" data-category="enlatados">
         <img src="img/maízdulce.jpg" alt="Maíz Dulce">
-        <h4>Maíz Dulce</h4>
+        <h4>Maíz Dulce desgranado en lata X340g</h4>
         <p>$6.800</p>
-        <button onclick="addToCart('Maíz Dulce', 6800)">Agregar al carrito</button>
+        <button onclick="addToCart('Maíz Dulce desgranado en lata X340g (Unidad)', 6800)">Agregar al carrito</button>
       </div>
 
       <div class="product" data-category="granos">
         <img src="img/lentejas.jpg" alt="Lentejas">
         <h4>Lentejas (Libra)</h4>
         <p>$5.800</p>
-        <button onclick="addToCart('Lentejas', 5800)">Agregar al carrito</button>
+        <button onclick="addToCart('Lentejas (Libra)', 5800)">Agregar al carrito</button>
       </div>
 
       <div class="product" data-category="granos">
         <img src="img/frijoles.jpg" alt="Frijoles">
-        <h4>Frijoles (Libra)</h4>
+        <h4>Frijoles Bola Roja (Libra)</h4>
         <p>$10.000</p>
-        <button onclick="addToCart('Frijoles', 10000)">Agregar al carrito</button>
+        <button onclick="addToCart('Frijoles Bola Roja (libra)', 10000)">Agregar al carrito</button>
       </div>
     </section>
   </div>
@@ -351,14 +355,19 @@
       renderCart();
     }
 
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
     function renderCart() {
       const cartItems = document.getElementById("cart-items");
       const total = document.getElementById("total");
       cartItems.innerHTML = "";
       let sum = 0;
-      cart.forEach(item => {
+      cart.forEach((item, index) => {
         const li = document.createElement("li");
-        li.textContent = `${item.name} - $${item.price}`;
+        li.innerHTML = `${item.name} - $${item.price} <button onclick="removeFromCart(${index})">❌</button>`;
         cartItems.appendChild(li);
         sum += item.price;
       });
@@ -367,4 +376,6 @@
   </script>
 </body>
 </html>
+
+
 
