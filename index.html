@@ -71,7 +71,7 @@
     .hero {
       text-align: center;
       padding: 120px 20px 60px;
-      background: url("almacen.png") no-repeat center center/cover; 
+      background: url("img/almacen.png") no-repeat center center/cover; 
       position: relative;
       color: white;
     }
@@ -209,24 +209,45 @@
       color: var(--verde-hover);
     }
 
+    /* ===== HAMBURGUESA ===== */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: var(--verde);
+      cursor: pointer;
+    }
+
     /* ===== 📱 RESPONSIVE ===== */
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         padding: 15px 20px;
       }
 
+      /* ocultar menú en móviles */
       nav {
-        margin-top: 10px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--rosado);
+        padding: 10px 0;
+      }
+
+      /* cuando esté activo */
+      nav.show {
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+      }
+
+      /* mostrar hamburguesa en móviles */
+      .hamburger {
+        display: block;
       }
 
       nav a {
-        margin: 0;
-        font-size: 14px;
+        margin: 10px 20px;
+        font-size: 16px;
       }
 
       .hero {
@@ -274,10 +295,16 @@
   <!-- ===== HEADER ===== -->
   <header id="main-header">
     <div class="logo">
-      <img src="monkado_logo_1.png" alt="Logo Monkádo" loading="lazy">
+      <img src="img/monkado_logo_1.png" alt="Logo Monkádo" loading="lazy">
       Monkádo
     </div>
-    <nav>
+
+    <!-- Botón hamburguesa (solo móviles) -->
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="nav-menu">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="TIenda.html">Tienda</a>
@@ -302,18 +329,19 @@
         justo en el momento que lo necesita.</p>
 
         <h1>Misión</h1>
-        <p>Nuestra misión en Monkádo es ser pioneros en el sector del delivery y la distribución, ofreciendo un servicio 
-          personalizado y eficiente, garantizando la protección y seguridad de los productos.  Apostamos por la tecnología 
-          como herramienta clave para reducir costos logísticos, transformando la experiencia de compra, logrando hacerla 
-          más práctica, confiable y cercana para cada usuario.
-</p>
+        <p>Nuestra misión en Monkádo es ser pioneros en el sector del delivery y la distribución, ofreciendo 
+          un servicio personalizado y eficiente, garantizando la protección y seguridad de los productos 
+          en el 100% de las entregas y manteniendo un índice de satisfacción del cliente superior al 
+          90%. Apostamos por la tecnología como herramienta clave para reducir costos logísticos en un 
+          15% anual, transformar la experiencia de compra y hacerla más práctica, confiable y cercana 
+          para cada usuario.</p>
 
         <h2>Visión</h2>
-        <p>En Monkádo visualizamos consolidarnos como una de las tres empresas líderes de delivery en Colombia para 2030, 
-          destacándonos por nuestra capacidad de innovación y eficiencia, con una cobertura nacional en las principales ciudades 
-          del país. Queremos ser reconocidos como un referente en soluciones logísticas modernas, logrando que gran parte de nuestros
-          usuarios valoren positivamente la experiencia de compra por su simplicidad, agilidad y confianza.
-</p>
+        <p>En Monkádo visualizamos consolidarnos como una de las tres empresas líderes de delivery en Colombia
+           para 2030, destacándonos por nuestra capacidad de innovación y eficiencia, con una cobertura 
+           nacional en más del 80% de las principales ciudades. Queremos ser reconocidos como un referente 
+           en soluciones logísticas modernas, logrando que al menos el 95% de nuestros usuarios valoren 
+           positivamente la experiencia de compra por su simplicidad, agilidad y confianza.</p>
       </section>
     </div>
 
@@ -369,10 +397,19 @@
 
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
+
+    // ===== SCRIPT HAMBURGUESA =====
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
   </script>
 
 </body>
 </html>
+
 
 
 
