@@ -24,6 +24,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #f0caca;
+      position: relative;
     }
 
     .logo {
@@ -63,11 +64,41 @@
       color: #5d7b59;
     }
 
+    /* ===== HAMBURGUESA (solo en móviles) ===== */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #7A9B76;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #FAE1DF;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     /* ===== HERO ===== */
     .hero {
       text-align: center;
       padding: 120px 20px 60px;
-      background: url("servicios.png") no-repeat center center/cover; 
+      background: url("img/servicios.png") no-repeat center center/cover; 
       position: relative;
       color: white;
     }
@@ -123,8 +154,7 @@
     }
 
     .service-box:nth-child(even) h3 {
-      background-color: #fff;
-      color: #fff; /* Rosa */
+      color: #ecc4c0; /* verde */
     }
 
     .service-box:nth-child(even) p {
@@ -187,62 +217,22 @@
       color: #333;
       margin: 0;
     }
-    /* ===== RESPONSIVE MOBILE ===== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .hero {
-    padding: 80px 15px 40px;
-  }
-
-  .hero h1 {
-    font-size: 2em;
-  }
-
-  .service-box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .service-box img {
-    margin: 0 0 15px 0;
-    width: 100%;
-    height: auto;
-  }
-
-  .service-text {
-    text-align: center;
-  }
-
-  footer {
-    padding: 20px;
-  }
-
-  .social-icons {
-    gap: 10px;
-  }
-}
   </style>
 </head>
 <body>
   <!-- ===== HEADER ===== -->
   <header id="header">
     <div class="logo">
-      <img src="monkado_logo_1.png" alt="Logo Monkádo">
+      <img src="img/monkado_logo_1.png" alt="Logo Monkádo">
       <h1>Monkádo</h1>
     </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <nav>
-      <ul>
+      <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="TIenda.html">Tienda</a></li>
@@ -261,7 +251,7 @@
     <h2>Servicios para Empresas</h2>
 
     <div class="service-box">
-      <img src="distribución.jpg" alt="Distribución empresarial">
+      <img src="img/distribución.jpg" alt="Distribución empresarial">
       <div class="service-text">
         <h3>Distribución eficiente</h3>
         <p>Nos encargamos de llevar tus productos a tus clientes con rapidez y seguridad, garantizando que tus entregas lleguen a tiempo y en perfecto estado.</p>
@@ -269,7 +259,7 @@
     </div>
 
     <div class="service-box">
-      <img src="almacenamiento.jpg" alt="Gestión logística">
+      <img src="img/almacenamiento.jpg" alt="Gestión logística">
       <div class="service-text">
         <h3>Gestión logística</h3>
         <p>Diseñamos soluciones personalizadas de logística para tu negocio, optimizando tiempos y costos en cada etapa de la cadena de distribución.</p>
@@ -277,7 +267,7 @@
     </div>
 
     <div class="service-box">
-      <img src="pedidos.jpg" alt="Plataforma de pedidos">
+      <img src="img/pedidos.jpg" alt="Plataforma de pedidos">
       <div class="service-text">
         <h3>Plataforma de pedidos</h3>
         <p>Brindamos acceso a herramientas digitales que permiten gestionar, rastrear y organizar pedidos de forma fácil y en tiempo real.</p>
@@ -285,7 +275,7 @@
     </div>
 
     <div class="service-box">
-      <img src="alianzas.jpg" alt="Alianzas estratégicas">
+      <img src="img/alianzas.jpg" alt="Alianzas estratégicas">
       <div class="service-text">
         <h3>Alianzas estratégicas</h3>
         <p>Impulsamos tu empresa creando conexiones con nuevos clientes y mercados a través de nuestra red de distribución confiable y moderna.</p>
@@ -298,7 +288,7 @@
     <h2>Servicios para Consumidores</h2>
 
     <div class="service-box">
-      <img src="distribución.jpg" alt="Compras rápidas">
+      <img src="img/distribución.jpg" alt="Compras rápidas">
       <div class="service-text">
         <h3>Compras rápidas</h3>
         <p>Haz tus compras sin complicaciones y recibe tus productos en la puerta de tu casa de manera fácil, segura y confiable.</p>
@@ -306,7 +296,7 @@
     </div>
 
     <div class="service-box">
-      <img src="mercado.jpg" alt="Delivery de mercado">
+      <img src="img/mercado.jpg" alt="Delivery de mercado">
       <div class="service-text">
         <h3>Delivery de mercado</h3>
         <p>Olvídate de las filas y el tiempo perdido: Monkádo lleva tu mercado hasta tu hogar, fresco y listo para ti.</p>
@@ -314,7 +304,7 @@
     </div>
 
     <div class="service-box">
-      <img src="rastreo.jpg" alt="Rastreo de pedidos">
+      <img src="img/rastreo.jpg" alt="Rastreo de pedidos">
       <div class="service-text">
         <h3>Rastreo en tiempo real</h3>
         <p>Con nuestra app podrás seguir tu pedido en todo momento, sabiendo exactamente cuándo llegará a tus manos.</p>
@@ -322,7 +312,7 @@
     </div>
 
     <div class="service-box">
-      <img src="soporte.jpg" alt="Atención personalizada">
+      <img src="img/soporte.jpg" alt="Atención personalizada">
       <div class="service-text">
         <h3>Atención personalizada</h3>
         <p>Estamos disponibles para resolver tus dudas y ayudarte en cada paso de tu experiencia con Monkádo.</p>
@@ -340,8 +330,18 @@
       <p>&copy; 2025 Monkádo - Todos los derechos reservados</p>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
+
+
 
 
 
